@@ -3,17 +3,20 @@
  *
  * @return {number}
  */
+// 3. Prefer `const` over `let` where possible, to avoid unintentional changes.
+// 4. Prefer `if` with `return` over `if else` to simplify later conditions. 
+// 5. DON'T add `else` after `if` with `return` - the code after it won't be executed anyway.
+
 function calculateRentalCost(days) {
+  // write code here
   const dailyRate = 40;
-  let totalCost = days * dailyRate;
-
+  let pay = dailyRate * days;
   if (days >= 7) {
-    totalCost -= 50;
+    pay -= 50;
   } else if (days >= 3) {
-    totalCost -= 20;
+    pay -= 20;
   }
-
-  return totalCost;
+  return pay;
 }
 
 module.exports = calculateRentalCost;
